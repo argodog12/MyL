@@ -1,45 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Card</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffe6e6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .card {
-            background-color: #fff;
-            border: 2px solid #ff4d4d;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 85%;
-        }
-        .card h1 {
-            color: #ff4d4d;
-        }
-        .card p {
-            color: #333;
-            border: 1px solid #ff4d4d;
-            border-radius: 5px;
-            padding: 10px;
-            background-color: #ffe6e6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Envelope Letter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f4f1ee;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .hint-text {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .envelope {
+      width: 400px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .letter-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(230, 121, 121, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .letter {
+      background: #e7d988;
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.4s ease;
+    }
+
+    .letter h2 {
+      margin-top: 0;
+    }
+
+    .close-img {
+      width: 100px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .close-img.enlarged {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(3);
+      z-index: 1001;
+    }
+
+    .close-img.enlarged {
+      transform: scale(8);
+    }
+
+    .close-btn:hover {
+      background: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .close-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .click-hint {
+      font-size: 1rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .arrow {
+      font-size: 1.5rem;
+      animation: point 1s infinite alternate;
+    }
+
+    @keyframes point {
+      from { transform: translateX(0); }
+      to { transform: translateX(5px); }
+    }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <div class="card">     
-        <p>Since I have met you my life has become a lot more joyful. I love waking up in the mornings, hearing about your dreams, talking to you and starting my day with a smile. I love how we can talk for a long time all throughout the day and not feel like we should stop. I love our evenings and nights that we spend together talking, playing games, sharing memes or being naughty naughty &#128520; It's sad when we have to go to sleep, but I can look forward to waking up in the morning and talking to you again. You have become my favorite person to talk to and spend time with and I'm really thankful that I have gotten the opportunity to meet you and get to know you. A lot of different small things had to  happen for us to meet and they all did and I'm thankful for them happening. I look forward to all our future talks, getting to know you even more and spending more time with you. While we can't meet irl right now, I really look forward to the day we will meet! </p>
-        <h1>Happy Valentine's Day!</h1>
-        <img src="roseb.png" alt="Flowers" style="width:200px; border-radius: 10px; margin-top: 20px;">
+  <div class="container">
+    <div class="hint-text">Click me to open</div>
+    <img
+      src="envelope.png"
+      alt="Envelope"
+      class="envelope"
+      id="envelope"
+    />
+  </div>
+
+  <div class="letter-overlay" id="letterOverlay">
+    <div class="letter">
+      <p>
+        Hey cutie, it's me. I'm sorry for hurting you and I'm sorry for being the reason for all the arguments we have. And I'm sorry for what I have said. I just don't know anymore how to express myself to you and show myself in a way where you'd like me, I love you so much but me hurting you all the time means I also don't deserve a precious girl like you. I just want you to know that to me you've been everything and I just don't know how to be without you. My favorite days and nights aren’t the quiet or eventful or sunny or hot ones. They’re the ones we spend laughing together, sharing jokes that don’t always make sense, letting time slip by so quickly always wtih you, it just flies and what feels for me a short moment with you is multiple hours actually, because being with you makes everything feel so much more joyful and happy, even my toughest days became nice together with you. My favorite time of all isn’t measured by hours or days. It’s any moment where we are together — where nothing special has to happen for it to feel perfect. Just you and me, sharing smiles and laughs, sharing the quiet moments together, sharing the difficult moments together, sharing a feeling that I wish I could hold onto, wishing I could hold onto you forever. You are where I feel the most happiness and I wish it was the same for you, feeling that with me you are happier everyday, every moment is better together no matter what we do, whether talking, looking at reels, watching movies, listening to songs, playing games or whatever else. But only you know that you told me before that things were better and fun together with me, if that wasn't a lie then I hope I at least brought you a bit of happiness through that like you did to me and maybe I also made your days a bit easier and more bearable like you did to me. Thank you for being you and thank you for coming into my life, you are precious to me and I never want to hurt you or make you feel bad but I have so yeah idk anymore. I'm just sitting here for the whole night and just thinking about it all and I just love you so much and miss you and our good moments together so crazy that idk I'm going crazy. I'll keep on working on my goal to become better to bring you more happiness however I can, trying to reach you. Please take care of yourself and do what makes you happy my love, you're an amazing girl and I know you'll do well in the future, I just hope I can be there with you and cheering for you. I'm just so sorry and I miss you so much.
+      </p>
+      <div class="close-wrapper">
+        <span class="click-hint">Click me</span>
+        <span class="arrow">➜</span>
+        <img src="flowe.png" alt="Close" class="close-img" id="closeBtn" />
+      </div>
     </div>
+  </div>
+
+  <script>
+    const envelope = document.getElementById('envelope');
+    const letterOverlay = document.getElementById('letterOverlay');
+    const closeBtn = document.getElementById('closeBtn');
+
+    envelope.addEventListener('click', () => {
+      letterOverlay.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      closeBtn.classList.add('enlarged');
+      setTimeout(() => {
+        closeBtn.classList.remove('enlarged');
+        letterOverlay.style.display = 'none';
+        closeBtn.style.position = '';
+        closeBtn.style.top = '';
+        closeBtn.style.left = '';
+      }, 5000);
+    });
+
+    // close when clicking outside the letter
+    letterOverlay.addEventListener('click', (e) => {
+      if (e.target === letterOverlay) {
+        letterOverlay.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
